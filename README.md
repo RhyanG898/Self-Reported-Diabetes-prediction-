@@ -48,13 +48,5 @@ The low precision of the pruned model is a particularly important limitation. Al
 
 Overall, the project demonstrates how model complexity, pruning and class imbalance can influence predictive performance, while also highlighting the need to interpret machine learning outputs within the limitations of the underlying health data.
 
-## Repository files and reproducibility
-
-- `data_preparation.do` — Stata code used to prepare the analytical dataset from NFHS-5 files.
-- `diabetes_prediction.ipynb` — Python notebook containing the model development, classification reports, confusion matrices, decision-tree visualisation and feature importance.
-- `README.md` — Overview of the methodology, findings and limitations.
-- `requirements.txt` *(optional)* — Python packages required to run the notebook.
-
-To reproduce the analysis, authorised users must first obtain access to the relevant NFHS-5 microdata and run the Stata data-preparation code. The resulting analytical CSV must then be made available locally to the Python notebook. **The file path in the notebook must be updated** to the location of the user's CSV before running all cells.
 
 **Data availability:** Individual-level NFHS-5 microdata and the derived analytical dataset are **not included** in this repository. Access to the source data is subject to the applicable data-use conditions.
