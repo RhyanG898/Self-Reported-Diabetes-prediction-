@@ -3,13 +3,13 @@ Predicting Self-Reported Diabetes Using Decision Trees: Evidence from NFHS-5
 Rhyan George Michael
 M.A. Public Policy & Governance, Tata Institute of Social Sciences
 
-Introduction
+**Introduction**
 
 Non-communicable diseases (NCDs), including diabetes, constitute an important public health concern. The use of machine learning models can help examine patterns in health data and identify the predictors associated with different health outcomes. This project uses a decision-tree classification model to predict self-reported current diabetes among respondents in India's National Family Health Survey (NFHS-5, 2019–21).
 
 The objective is to examine the performance of a decision tree trained on socio-demographic and biomedical predictors. In particular, the project compares an unpruned decision tree with a depth-limited, cost-complexity-pruned model, focusing on how class imbalance affects the results.
 
-Data and methodology
+**Data and methodology**
 
 The data used for the analysis were extracted from three NFHS-5 files: the Household Member (PR), Individual Recode (IR) and Male Recode (MR) files. Information from the IR and MR files was combined and matched with the PR file to construct the analytical dataset. The outcome variable was drawn from respondents' reports of whether they currently had diabetes.
 
@@ -20,8 +20,8 @@ The predictors employed were hypertension, glucose, sector (rural/urban), wealth
 The decision-tree models were developed in Python, using scikit-learn. Gini impurity was used as the splitting criterion, and balanced class weights were applied to account for the imbalance between the two outcome classes. The dataset was divided into training (60%), validation (20%) and testing (20%) sets using stratified sampling.
 
 An initial unpruned decision tree was fitted on the development dataset (80%). For the second model, a maximum depth of 10 was combined with cost-complexity pruning. Due to computational limitations, a subset of 21 candidate alpha values was evaluated. The alpha value with the highest validation F1-score for the diabetes class was selected, after which the final model was refitted on the full development dataset. Both models were evaluated on the held-out test dataset.
-
-Findings and interpretation
+**
+Findings and interpretation**
 
 The classification results highlight the importance of looking beyond accuracy when working with an imbalanced dataset.
 
@@ -73,7 +73,7 @@ At the same time, the increase in recall comes at the cost of considerably lower
 
 In the fitted pruned model, glucose (48.26%), hypertension (30.02%) and age (11.97%) had the highest feature-importance values. These values describe the contribution of predictors to the fitted tree's decisions; they do not indicate causal effects.
 
-Limitations and conclusion
+**Limitations and conclusion**
 
 Predictive modelling can be useful in public health research, but caution is required when interpreting the findings. The outcome in this study is self-reported diabetes, rather than diabetes confirmed through clinical diagnosis. Moreover, measured glucose is one of the predictors, which limits the model's usefulness as a low-cost screening alternative. The complete-case approach may also introduce sample-selection bias, and not all possible inconsistencies in the blood-pressure readings were assessed.
 
